@@ -1,4 +1,5 @@
 
+    /* Reset and base styles */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -96,44 +97,108 @@ body {
     transform: scale(1.1);
 }
 
-/* Hero section */
-.hero {
+/* Project Hero Section */
+.project-hero {
     position: relative;
-    height: 80vh;
+    height: 60vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/back.png");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/back.png');
     background-size: cover;
     background-position: center;
-}
-
-.hero-content {
     color: white;
-    max-width: 600px;
+    text-align: center;
 }
 
-.hero h1 {
+.project-hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #6887ed;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+/* Featured Project Section */
+.featured-project {
+    padding: 60px 0;
 }
 
-.cta-button:hover {
-    background-color: #5674d1;
+.featured-project-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
 }
 
-/* Skills section */
+.featured-project-image {
+    flex: 1;
+}
+
+.featured-project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.featured-project-text {
+    flex: 1;
+}
+
+/* Video Section */
+.video-section {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 60px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-item .desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Skills Section */
 .skills {
     padding: 60px 0;
+    background-color: #f9f9f9;
 }
 
 .skills-grid {
@@ -223,8 +288,16 @@ footer {
         display: flex;
     }
 
-    .hero h1 {
+    .project-hero h1 {
         font-size: 36px;
+    }
+
+    .featured-project-content {
+        flex-direction: column;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 
     .footer-grid {
