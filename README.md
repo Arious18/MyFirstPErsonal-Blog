@@ -15,3 +15,6 @@ Firezilla
 
 
 WEBSITE URL : https://azatsblog.kesug.com/index.html
+
+
+NOTE!! SOMETIMES DOMAIN DOESN'T RESPOND CORRECTLY  SO PLEASE REFLESH THE PAGE TEACHER!!! 
