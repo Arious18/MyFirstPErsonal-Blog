@@ -14,7 +14,7 @@ Firezilla
 
 
 
-WEBSITE URL : https://azatsblog.kesug.com/index.html
+WEBSITE URL : https://azatsblog.kesug.com/projects.html
 
 
 NOTE!! SOMETIMES DOMAIN (or home page ) DOESN'T RESPOND CORRECTLY  SO PLEASE REFLESH THE PAGE TEACHER!!! 
