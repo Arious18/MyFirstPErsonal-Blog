@@ -1,169 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azat's Portfolio</title>
     <script src="https://kit.fontawesome.com/29cad3ac06.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/index.css" type="text/css" >
+
 </head>
 <body>
-<!-- Top Bar Section -->
 <div class="top-bar">
-    <h2><i class="fa-solid fa-phone"></i> +90 (501) 354 2771</h2>
-    <h2><i class="fa-solid fa-at"></i> azatvepakulyyev@gmail.com</h2>
+    <div class="container">
+        <h2><i class="fa-solid fa-phone"></i> +90 (501) 354 2771</h2>
+        <h2><i class="fa-solid fa-at"></i> azatvepakulyyev@gmail.com</h2>
+    </div>
 </div>
 
-<!-- Main Area Section -->
-<div class="main_area">
-    <div class="main_box">
-        <div class="bg_picture">
-            <img src="images/back.png" alt="Background Image">
-        </div>
-    </div>
-
-    <!-- Header Section -->
-    <header class="header_section">
-        <div class="BLOG_NAME">
-            <a href="index.html">
-                <span>Azat's Blog</span>
-            </a>
-        </div>
-        <div class="navbar_all">
-            <ul class="navbar_buttons">
-                <li class="nav_button active">
-                    <a class="nav_link" href="index.html">Home</a>
-                </li>
-                <li class="nav_button">
-                    <a class="nav_link" href="projects.html">Projects</a>
-                </li>
-                <li class="nav_button">
-                    <a class="nav_link" href="about.html">About Me</a>
-                </li>
-                <li class="nav_button">
-                    <a class="nav_link" href="contact.html">Contact Me</a>
-                </li>
-                <li class="nav_button">
-                    <a class="profile_pic" href="about.html">
-                        <img src="images/iconn.png" alt="Profile Picture">
-                    </a>
-                </li>
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">Azat's Blog</a>
+        <button class="nav-toggle" id="navToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <ul class="nav-list" id="navList">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+                <li><a href="about.html" class="profile-pic">
+                    <img src="images/iconn.png" alt="Profile Picture">
+                </a></li>
             </ul>
-        </div>
-    </header>
+        </nav>
+    </div>
+</header>
 
-    <!-- Introduction Section -->
-    <div class="pcs-box">
-        <div class="pcs-text">
-            <h1><br>Hi I'm Azat. Welcome to my Blog website!!!</h1>
-
-        </div>
-        <div class="btn-box">
-            <a href="#" class="btn1">Read More</a>
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Hi, I'm Azat.<br>Welcome to my Blog website!</h1>
+            <a href="#" class="cta-button">Read More</a>
         </div>
     </div>
+</section>
 
-    <!-- Developer Section -->
-    <div class="developer">
-        <div class="developer-image">
-
-            <img src="images/developer.jpg" alt="Developer Image">
-        </div>
-
-    </div>
-
-
-    <!-- Body Section -->
-    <div class="know-box">
-        <div class="boxes" id="unity">
-            Unity
-            <img src="images/unity.png" class="image" alt="Unity Logo">
-            <div class="text-box1">
+<section class="skills">
+    <div class="container">
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="images/unity.png" alt="Unity Logo">
                 <h3>Mastering Game Development with Unity</h3>
             </div>
-        </div>
-
-        <div class="boxes" id="html">
-            HTML
-            <a href="#"> <img class="image" src="images/html.png" alt="HTML Logo"></a>
-            <div class="text-box1">
+            <div class="skill-card">
+                <img src="images/html.png" alt="HTML Logo">
                 <h3>Designing Modern Web Pages Using HTML & CSS</h3>
             </div>
-        </div>
-
-        <div class="boxes" id="java">
-            Java
-            <img src="images/java.png" class="image" alt="Java Logo">
-            <div class="text-box1">
+            <div class="skill-card">
+                <img src="images/java.png" alt="Java Logo">
                 <h3>Powerful Backend Solutions with Java</h3>
             </div>
         </div>
     </div>
-
-
-
+</section>
 
 <footer>
     <div class="container">
-        <div class="wrapper">
-            <p class="footer-text">As a junior developer, I am eager to explore web accessibility to
-                create inclusive user experiences, enhance web performance for faster loading times,
-                and understand the fundamentals of database management to build efficient applications.
-            </p>
-        </div>
-
-        <div class="wrapper">
-            <p class="footer-title"> Main Links</p>
-            <ul>
-                <li>
-                    <a class="footer-link" href="#"> Projects</a>
-                </li>
-                <li>
-                    <a class="footer-link" href="#">About Me</a>
-                </li>
-                <li>
-                    <a class="footer-link" href="#">Contact Me</a>
-                </li>
-
-            </ul>
-
-            <div class="wrapper">
-
-                <p class="footer-title">Legal Stuff</p>
-
-                <ul>
-
-                    <li>
-                        <a href="#" class="footer-link">Privacy Notice</a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="footer-link">Cookie Policy</a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="footer-link">Terms Of Use</a>
-                    </li>
-                </ul>
-
-
+        <div class="footer-grid">
+            <div class="footer-text">
+                <p>As a junior developer, I am eager to explore web accessibility to create inclusive user experiences, enhance web performance for faster loading times, and understand the fundamentals of database management to build efficient applications.</p>
             </div>
-
+            <div class="footer-links">
+                <h3>Main Links</h3>
+                <ul>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Contact Me</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Legal Stuff</h3>
+                <ul>
+                    <li><a href="#">Privacy Notice</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
         </div>
-
+        <div class="copyright">
+            <p>© 2024 Azat Vepakulyyev.2211012843 .All rights reserved.</p>
+        </div>
     </div>
-
-
-
-<div class="copyright">
-    <p> © 2022 Azat Vepakulyyev.2211012843</p>
-</div>
-
-
 </footer>
-</div>
 
+<script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+        document.getElementById('navList').classList.toggle('active');
+    });
+</script>
 </body>
 </html>

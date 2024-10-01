@@ -1,216 +1,403 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Azat's Portfolio</title>
     <script src="https://kit.fontawesome.com/29cad3ac06.js" crossorigin="anonymous"></script>
+    <style>
+        /* Reset and base styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Utility classes */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top bar */
+        .top-bar {
+            background-color: #7169f3;
+            padding: 10px 0;
+            color: white;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar h2 {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Header */
+        .header {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-pic img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #34cfb6;
+            transition: transform 0.3s;
+        }
+
+        .profile-pic img:hover {
+            transform: scale(1.1);
+        }
+
+        /* About section */
+        .about-hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/back.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .developer-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .developer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        /* Experience section */
+        .experience {
+            padding: 60px 0;
+        }
+
+        .experience h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .experience-content {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        /* Skills section */
+        .skills {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #021434;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-links h3 {
+            color: #85d273;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .nav-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text h1 {
+                font-size: 36px;
+            }
+
+            .developer-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- Top Bar Section -->
 <div class="top-bar">
-    <h2><i class="fa-solid fa-phone"></i> +90 (501) 354 2771</h2>
-    <h2><i class="fa-solid fa-at"></i> azatvepakulyyev@gmail.com</h2>
+    <div class="container">
+        <h2><i class="fa-solid fa-phone"></i> +90 (501) 354 2771</h2>
+        <h2><i class="fa-solid fa-at"></i> azatvepakulyyev@gmail.com</h2>
+    </div>
 </div>
 
-<!-- Main Area Section -->
-<div class="main_area">
-    <div class="main_box">
-        <div class="bg_picture">
-            <img src="images/back.png" alt="Background Image">
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">Azat's Blog</a>
+        <button class="nav-toggle" id="navToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <ul class="nav-list" id="navList">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link active">About Me</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+                <li><a href="about.html" class="profile-pic">
+                    <img src="images/iconn.png" alt="Profile Picture">
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="about-hero">
+    <div class="container">
+        <div class="about-content">
+            <div class="developer-image">
+                <img src="images/developer.jpg" alt="Developer Image">
+            </div>
+            <div class="about-text">
+                <h1>About the Junior Developer</h1>
+                <p>Passionate student at Süleyman Demirel University, pursuing Computer Engineering with an expected graduation in 2026.</p>
+            </div>
         </div>
     </div>
+</section>
 
-    <!-- Header Section -->
-    <header class="header_section">
-        <div class="BLOG_NAME">
-            <a href="index.html">
-                <span>Azat's Blog</span>
-            </a>
-        </div>
-        <div class="navbar_all">
-            <ul class="navbar_buttons">
-                <li class="nav_button ">
-                    <a class="nav_link" href="index.html">Home</a>
-                </li>
-                <li class="nav_button">
-                    <a class="nav_link" href="projects.html">Projects</a>
-                </li>
-                <li class="nav_button" active>
-                    <a class="nav_link" href="about.html">About Me</a>
-                </li>
-                <li class="nav_button">
-                    <a class="nav_link" href="contact.html">Contact Me</a>
-                </li>
-                <li class="nav_button">
-                    <a class="profile_pic" href="about.html">
-                        <img src="images/iconn.png" alt="Profile Picture">
-                    </a>
-                </li>
+<section class="experience">
+    <div class="container">
+        <h2>My Experience</h2>
+        <div class="experience-content">
+            <h3>Education</h3>
+            <p>Süleyman Demirel University<br>
+                Bachelor of Science in Computer Engineering<br>
+                Expected Graduation Year: 2026</p>
+
+            <h3>Technical Skills</h3>
+            <p><strong>Programming Languages:</strong></p>
+            <ul>
+                <li>C#: Proficient in developing applications using C# with a focus on Unity for game development.</li>
+                <li>Java: Experienced in building robust applications using Java and Spring Boot framework.</li>
+                <li>Python: Skilled in scripting and automation, with a solid understanding of Python programming.</li>
+            </ul>
+
+            <p><strong>Web Development:</strong></p>
+            <ul>
+                <li>HTML & CSS: Competent in creating responsive and visually appealing web pages.</li>
+                <li>WordPress: Knowledgeable in using WordPress for website development and content management.</li>
             </ul>
         </div>
-    </header>
-
-    <!-- Introduction Section -->
-    <div class="pcs-box">
-        <div class="pcs-text">
-            <h1><br>About the junior develepor:)</h1>
-
-        </div>
-        <div class="btn-box">
-            <a href="#" class="btn1">Read More</a>
-        </div>
     </div>
+</section>
 
-    <!-- Developer Section -->
-    <div class="developer">
-        <div class="developer-image">
-
-            <img src="images/developer.jpg" alt="Developer Image">
-        </div>
-
-    </div>
-
-    <div class="aboutDev">
-        <h1>My experience </h1>
-
-        <pre class="explainMyself">I am a dedicated and ambitious student currently pursuing<br> my degree at Süleyman Demirel University. With a strong passion for technology and software development, <br>I am actively expanding my skill set in various programming languages and development frameworks. <br>My goal is to leverage my knowledge and skills to contribute to innovative projects and grow as a proficient developer.
-
-Education:
-
-Süleyman Demirel University
-Bachelor of Science in Computer Engineering
-Expected Graduation Year:2026
-Technical Skills:
-
-Programming Languages:
-C#: Proficient in developing applications using C# with a focus on Unity for game development.
-Java: Experienced in building robust applications using Java and Spring Boot framework.
-Python: Skilled in scripting and automation, with a solid understanding of Python programming.
-Web Development:
-HTML & CSS: Competent in creating responsive and visually appealing web pages.
-WordPress: Knowledgeable in using WordPress for website development and content management.
-Projects:
-
-Unity Game Development:
-Developed several small games using Unity and C#, focusing on gameplay mechanics, user interface design, and performance optimization.
-Java Spring Boot Applications:
-Created web applications using Java and Spring Boot, implementing RESTful APIs, and ensuring efficient data handling and security.
-Python Automation Scripts:
-Developed automation scripts to streamline repetitive tasks, improving efficiency and accuracy in various processes.
-Web Development Projects:
-Designed and developed responsive websites using HTML, CSS, and WordPress, ensuring cross-browser compatibility and user-friendly interfaces.
-Professional Development:
-
-Workshops and Courses:
-Attended various workshops and online courses to enhance my skills in Unity, Java, Python, and web development.
-Collaborative Projects:
-Worked on team projects, collaborating with peers to develop software solutions and gain practical experience in project management and teamwork.
-Personal Attributes:
-
-Problem-Solving:
-Strong analytical skills with the ability to identify issues and develop effective solutions.
-Adaptability:
-Quick learner, able to adapt to new technologies and frameworks with ease.
-Team Player:
-Excellent communication and collaboration skills, with a proven ability to work effectively in team environments.
-Career Objective:
-
-To secure a challenging position in a reputable organization where I can apply my skills in software development and web technologies,<br>contribute to innovative projects, and continue to grow professionally.As a Software Engineering student, I've developed and tested software solutions using Java Spring, achieving significant performance <BR>optimizations and implementing new features. I collaborated with a team of engineers to enhance code quality through rigorous code reviews.<br>I have hands-on experience developing applications using Unity. I've applied Unity's powerful features to create interactive and <br>engaging experiences, leveraging C# for scripting and implementing various gameplay mechanics and user interfaces. My work<br>includes optimizing performance, integrating assets, and ensuring compatibility across different platforms, contributing <br>to the seamless deployment of applications.During my journey with HTML, I’ve learned that it serves as the backbone of web development. It’s not a programming language per se; rather,<br>it’s a markup language that structures content on web pages.
- </pre>
-
-
-    </div>
-
-
-    <div class="know-box">
-        <div class="boxes" id="unity">
-            Unity
-            <img src="images/unity.png" class="image" alt="Unity Logo">
-            <div class="text-box1">
-                <h3>Mastering Game Development with Unity</h3>
+<section class="skills">
+    <div class="container">
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="images/unity.png" alt="Unity Logo">
+                <h3>Unity Game Development</h3>
+                <p>Developed several small games using Unity and C#, focusing on gameplay mechanics and UI design.</p>
             </div>
-        </div>
-
-        <div class="boxes" id="html">
-            HTML
-            <a href="#"> <img class="image" src="images/html.png" alt="HTML Logo"></a>
-            <div class="text-box1">
-                <h3>Designing Modern Web Pages Using HTML & CSS</h3>
+            <div class="skill-card">
+                <img src="images/html.png" alt="HTML Logo">
+                <h3>Web Development</h3>
+                <p>Created responsive websites using HTML, CSS, and WordPress, ensuring cross-browser compatibility.</p>
             </div>
-        </div>
-
-        <div class="boxes" id="java">
-            Java
-            <img src="images/java.png" class="image" alt="Java Logo">
-            <div class="text-box1">
-                <h3>Powerful Backend Solutions with Java</h3>
+            <div class="skill-card">
+                <img src="images/java.png" alt="Java Logo">
+                <h3>Java Development</h3>
+                <p>Built web applications using Java and Spring Boot, implementing RESTful APIs and ensuring security.</p>
             </div>
         </div>
     </div>
+</section>
 
-
-    <footer>
-        <div class="container">
-            <div class="wrapper">
-                <p class="footer-text">As a junior developer, I am eager to explore web accessibility to
-                    create inclusive user experiences, enhance web performance for faster loading times,
-                    and understand the fundamentals of database management to build efficient applications.
-                </p>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-text">
+                <p>As a junior developer, I am eager to explore web accessibility to create inclusive user experiences, enhance web performance for faster loading times, and understand the fundamentals of database management to build efficient applications.</p>
             </div>
-
-            <div class="wrapper">
-                <p class="footer-title"> Main Links</p>
+            <div class="footer-links">
+                <h3>Main Links</h3>
                 <ul>
-                    <li>
-                        <a class="footer-link" href="#"> Projects</a>
-                    </li>
-                    <li>
-                        <a class="footer-link" href="#">About Me</a>
-                    </li>
-                    <li>
-                        <a class="footer-link" href="#">Contact Me</a>
-                    </li>
-
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Contact Me</a></li>
                 </ul>
-
-                <div class="wrapper">
-
-                    <p class="footer-title">Legal Stuff</p>
-
-                    <ul>
-
-                        <li>
-                            <a href="#" class="footer-link">Privacy Notice</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer-link">Cookie Policy</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer-link">Terms Of Use</a>
-                        </li>
-                    </ul>
-
-
-                </div>
-
             </div>
-
+            <div class="footer-links">
+                <h3>Legal Stuff</h3>
+                <ul>
+                    <li><a href="#">Privacy Notice</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
         </div>
-
-
         <div class="copyright">
-            <p> © 2022 Azat Vepakulyyev.  2211012843 </p>
+            <p>© 2024 Azat Vepakulyyev.2211012843. All rights reserved.</p>
         </div>
-
-
+    </div>
 </footer>
 
-</div>
+<script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+        document.getElementById('navList').classList.toggle('active');
+    });
+</script>
 </body>
 </html>
