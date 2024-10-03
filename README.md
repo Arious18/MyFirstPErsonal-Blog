@@ -14,7 +14,7 @@ Firezilla
 
 
 
-WEBSITE URL : https://azatsblog.kesug.com/projects.html
+WEBSITE URL : https://azat18.netlify.app/
 
 
 NOTE!! SOMETIMES DOMAIN (or home page ) DOESN'T RESPOND CORRECTLY  SO PLEASE REFLESH THE PAGE TEACHER!!! 
